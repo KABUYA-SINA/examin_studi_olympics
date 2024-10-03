@@ -1,0 +1,13 @@
+/node_modules
+.env
+
+/controllers/adm.js
+/controllers/product.js
+/images
+/middleware
+/models/Product.js
+/models/Adms.js
+/routes/product.js
+/routes/admRoute.js
+/server.js
+/db.js
