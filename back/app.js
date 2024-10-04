@@ -34,6 +34,7 @@ const limiter = rateLimit({
 //Enregistrement routes 
 app.use(xss())
 app.use(express.urlencoded({ extended: true }));
+app.use(helmet())
 app.use(limiter)
 app.use('/api/products', productRoutes)
 app.use('/api/auth', UserRoute)
@@ -41,6 +42,5 @@ app.use('/api/auth', Adm)
 app.use('/images', express.static(path.join(__dirname, 'images')))
 app.use(express.static('images'));
 app.use(express.json());
-app.use(helmet.crossOriginResourcePolicy({ policy: "same-site" }))
 
 module.exports = app;
