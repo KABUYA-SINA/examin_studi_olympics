@@ -1,10 +1,10 @@
 /node_modules
 .env
 
-/controllers/adm.js
+
 /controllers/product.js
 /images
+
 /models/Product.js
-/models/Adms.js
+
 /routes/product.js
-/routes/admRoute.js
