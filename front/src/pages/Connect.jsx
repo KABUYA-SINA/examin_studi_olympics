@@ -21,12 +21,12 @@ function connect() {
             }
         >
             <Link to={'/login'}>
-                <button type='submit' className='btn-connect' data-testid="btn-connect">LOGIN</button>
+                <button type='submit' className='btn-connect' data-testid="btn-connect">Login</button>
             </Link>
             <br />
             <br />
             <Link to={'/signup'}>
-                <button type="submit" className='btn-connect' data-testid="btn-connect">SIGNUP</button>
+                <button type="submit" className='btn-connect' data-testid="btn-connect">Signup</button>
             </Link>
         </motion.main>
     );
