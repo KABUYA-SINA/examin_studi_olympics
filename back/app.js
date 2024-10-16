@@ -22,7 +22,6 @@ app.use((req, res, next) => {
 })
 
 app.set('trust proxy', true);
-app.use(helmet());
 
 //refresh Limite 
 const limiter = rateLimit({
