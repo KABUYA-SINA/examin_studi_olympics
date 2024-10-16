@@ -21,6 +21,9 @@ app.use((req, res, next) => {
   next();
 })
 
+app.set('trust proxy', true);
+app.use(helmet());
+
 //refresh Limite 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
@@ -31,16 +34,19 @@ const limiter = rateLimit({
 })
 
 
-//Enregistrement routes 
-app.use(xss())
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use(xss())
+
 app.use(limiter)
+
 app.use('/api/products', productRoutes)
 app.use('/api/auth', UserRoute)
 app.use('/api/auth', Adm)
+
 app.use('/images', express.static(path.join(__dirname, 'images')))
 app.use(express.static('images'));
-app.use(express.json());
 app.use(helmet.crossOriginResourcePolicy({ policy: "same-site" }))
 
 module.exports = app;
